@@ -28,4 +28,18 @@ public class SampleTests {
 		log.info(restaurant.getChef());
 		
 	}
+	
+	@Setter(onMethod_ = @Autowired)
+	private Hotel hotel;
+	
+	@Test
+	public void testExistHotel() {
+		
+		assertNotNull(hotel);
+		
+		System.out.println("test----");
+		log.info(hotel);
+		log.info("----");
+		log.info(hotel.getChef());
+	}
 }

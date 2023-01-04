@@ -1,6 +1,6 @@
 package com.keduit.persistence;
 
-import static org.junit.Assert.fail;
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,5 +27,9 @@ public class TimeMapperTests {
 		log.info(timeMapper.getClass().getName());
 		log.info(timeMapper.getTime());
 	}
-	
+	@Test
+	public void testGetTime2() {
+		log.info("----getTime2----");
+		log.info(timeMapper.getTime2());
+	}
 }
