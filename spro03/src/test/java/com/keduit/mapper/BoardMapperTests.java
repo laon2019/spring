@@ -39,6 +39,45 @@ public class BoardMapperTests {
 		bVO.setWriter("test작성자");
 		
 		mapper.insert(bVO);
-		log.info("----"+bVO);
+		log.info("-------------------------"+bVO);
+	}
+	@Test
+	public void testInsertSelectKey() {
+		BoardVO board = new BoardVO();
+		board.setTitle("새로 작성하는 글 select key test");
+		board.setContent("새로 작성하는 글 내용 select key test");
+		board.setWriter("user99");
+		
+		mapper.insertSelectKey(board);
+		
+		log.info("-------------------------"+board);
+	}
+	
+	@Test
+	public void testRead() {
+		BoardVO board = new BoardVO();
+		board = mapper.read(5L);
+		log.info("------------"+board);
+	}
+	
+	@Test
+	public void testDelete() {
+		int result = mapper.delete(3L);
+		log.info("-------------------------");
+		log.info("delete개수"+result);
+	}
+	
+	@Test
+	public void testUpdate() {
+		BoardVO board = new BoardVO();
+		board.setTitle("업데이트 작성글");
+		board.setContent("업데이트 내용");
+		board.setWriter("업데이트 작성자");
+		board.setBno(5L);
+		
+		int result = mapper.update(board);
+		log.info("---------------");
+		log.info("update 갯수 =>" + result);
+		
 	}
 }

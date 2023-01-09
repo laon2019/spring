@@ -36,7 +36,7 @@
 		<level value="warn" />
 	</logger>
 	
-	<logger name="jdbc.resultest">
+	<logger name="jdbc.resultset">
 		<level value="warn" />
 	</logger>
 	
