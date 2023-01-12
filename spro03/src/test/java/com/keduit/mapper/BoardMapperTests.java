@@ -93,4 +93,14 @@ public class BoardMapperTests {
 		log.info("update 갯수 =>" + result);
 		
 	}
+	
+	@Test
+	public void testSearch() {
+		Criteria cri = new Criteria();
+		cri.setKeyword("테스트");
+		cri.setType("TC");
+		
+		List<BoardVO> list = mapper.getListWithPaging(cri);
+		list.forEach(board->log.info(board));
+	}
 }
